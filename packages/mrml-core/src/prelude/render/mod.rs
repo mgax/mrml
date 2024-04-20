@@ -12,11 +12,9 @@ use crate::helper::tag::Tag;
 use crate::mj_head::MjHead;
 use crate::prelude::hash::Map;
 
-#[derive(Debug, thiserror::Error)]
-pub enum Error {
-    #[error("unknown fragment {0}")]
-    UnknownFragment(String),
-}
+mod error;
+
+pub use error::Error;
 
 #[deprecated = "use mrml::prelude::render::RenderOptions instead"]
 pub type Options = RenderOptions;
